@@ -24,7 +24,7 @@ The idea was to see the same dictionary-attack concept implemented three differe
 | PM2 | [Networkwalks Hash Calculator](https://networkwalks.com/hash-calculator/) + [Password Cracker](https://networkwalks.com/password-cracker/) |
 | Hash extraction (Windows side) | [Online Hash Crack — PDF Hash Extractor](https://www.onlinehashcrack.com/tools-pdf-hash-extractor.php) |
 
-Before touching the actual lab, I had to fix my VirtualBox Kali VM — it had lost its network connection since Week 2 (I'd switched to VMware for that week's labs). `eth0` had link/carrier but no IP assigned at all, and `nmcli connection up` was failing with "IP configuration could not be reserved." Turned out `ipv4.dad-timeout` had reset to its default instead of staying at `0` (Duplicate Address Detection stalls out on this NAT Network setup). Reapplied:
+Before touching the actual lab, I had to fix my VirtualBox Kali VM — it kept crashing and hanging  so I removed it then reextracted it but this time instead of HDD I used SSD and it solved the problem. After logging in another problem arose, it had lost its network connection. `eth0` had link/carrier but no IP assigned at all, and `nmcli connection up` was failing with "IP configuration could not be reserved." Turned out `ipv4.dad-timeout` had reset to its default instead of staying at `0` (Duplicate Address Detection stalls out on this NAT Network setup). Reapplied:
 
 ```bash
 sudo nmcli connection modify "Wired connection 1" ipv4.dad-timeout 0
